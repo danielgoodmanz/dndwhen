@@ -1,0 +1,107 @@
+body {
+   font-family: 'Montserrat', sans-serif;
+}
+
+.nombre {
+   text-align: center;
+   max-height: 30px;
+}
+
+.nombre:last-child {
+   text-decoration: underline;
+}
+form {
+   margin-top: 100px;
+}
+
+::placeholder {
+   color: grey;
+   opacity: 1;
+   text-align: center;
+   color: bisque;
+}
+
+input {
+   text-align: center;
+   height: 50px;
+   background: transparent;
+   border: none;
+   font-weight: bold;
+   color: bisque;
+   outline: none;
+}
+input ~ button {
+   border-color: transparent;
+   border-radius: 50%;
+   border-width: 0;
+   width: 25px;
+   font-weight: bold;
+   background-color: bisque;
+   padding-bottom: 5px;
+}
+input:focus::placeholder {
+   color: transparent;
+}
+#listrow {
+   height: 300px;
+}
+
+.col {
+   text-align: center;
+}
+
+.fade-in {
+   animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+
+span {
+   animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+   50% {
+      opacity: 0;
+   }
+}
+
+header {
+   background-image: url('dice.jpg');
+   background-size: 100%;
+   text-align: center;
+   height: 150px;
+   padding: 20px;
+   margin-bottom: 40px;
+}
+
+footer {
+   /* background-image: url('dice.jpg'); */
+   text-align: center;
+   margin-top: 100px;
+   /* height: 600px; */
+   height: 10vh;
+}
+
+#resetweek {
+   text-align: center;
+}
+
+#announce {
+   text-align: center;
+   animation: blinker 1s linear infinite;
+   color: green;
+   margin-top: 50px;
+}
+
+#titleimg {
+   height: 50px;
+   width: 50px;
+}

@@ -1,0 +1,197 @@
+<%- include("partials/header.ejs") %>
+
+
+  <header>
+    <h1 class="display-6 fw-bold">DnD when <img id="titleimg" src="smalldie.png" alt=""></h1>
+    <h2 class="display-6 fw-bold"> <%= ejsDay %></h2>
+  </header>
+ 
+
+
+<div class="container-fluid">
+  <div class="row" id="listrow">
+    <div class="col">
+      
+
+
+<h1 class="display-5">Sunday</h1>
+<%  for (var i=0; i<ejsAdventurers.length; i++){%>
+      <div class="nombre display-6 fst-italic fw-semibold">
+     <p> <%= ejsAdventurers[i]%></p> 
+    </div>
+<%  }%>
+
+
+<!-- day 2 -->
+</div>
+<div class="col">
+
+
+<h1 class="display-5">Monday</h1>
+<%  for (var i=0; i<ejsAdventurers2.length; i++){%>
+ 
+  <div class="nombre display-6 fst-italic fw-semibold">
+  <p><%= ejsAdventurers2[i]%></p> 
+  
+</div>
+<%  }%>
+
+
+</div>
+<!-- day 3 -->
+<div class="col">
+  
+  <h1 class="display-5">Tuesday</h1>
+<%  for (var i=0; i<ejsAdventurers3.length; i++){%>
+  <div class="nombre display-6 fst-italic fw-semibold">
+  <p> <%= ejsAdventurers3[i]%></p> 
+</div>
+<%  }%>
+
+
+</div>
+<!-- day 4 -->
+<div class="col">
+  <h1 class="display-5">Wednesday</h1> 
+<%  for (var i=0; i<ejsAdventurers4.length; i++){%>
+  <div class="nombre display-6 fst-italic fw-semibold">
+  <p> <%= ejsAdventurers4[i]%></p> 
+</div>
+<%  }%>
+
+
+</div>
+<!-- day 5 -->
+<div class="col">
+  <h1 class="display-5">Thursday</h1>
+<%  for (var i=0; i<ejsAdventurers5.length; i++){%>
+  <div class="nombre display-6 fst-italic fw-semibold">
+  <p> <%= ejsAdventurers5[i]%></p>
+ </div>
+<%  }%>
+
+
+</div>
+<!-- day 5 -->
+<div class="col">
+  <h1 class="display-5">Friday</h1>
+<%  for (var i=0; i<ejsAdventurers6.length; i++){%>
+  <div class="nombre display-6 fst-italic fw-semibold">
+  <p> <%= ejsAdventurers6[i]%></p>
+ </div>
+<%  }%>
+
+
+</div>
+<!-- day 6 -->
+<div class="col">
+  <h1 class="display-5">Saturday</h1>
+<%  for (var i=0; i<ejsAdventurers7.length; i++){%>
+  <div class="nombre display-6 fst-italic fw-semibold">
+  <p> <%= ejsAdventurers7[i]%></p>
+ </div>
+<%  }%>
+
+
+</div>
+
+
+
+</div>
+<div class="row">
+<div class="col">
+
+<form action="/sunday" method="post">
+  <input type="text" name="input" placeholder="adventurer" autocomplete="off" required/>
+  <button type="submit" name="button">+</button>
+</form>
+
+</div>
+<div class="col">
+  <form action="/monday" method="post">
+    <input type="text" name="input2" placeholder="adventurer" autocomplete="off" required/>
+    <button type="submit" name="button2">+</button>
+  </form>
+</div>
+<div class="col">
+  <form action="/tuesday" method="post">
+    <input type="text" name="input3" placeholder="adventurer" required/>
+    <button type="submit" name="button3">+</button>
+  </form>
+</div>
+<div class="col">
+  <form action="/wednesday" method="post">
+    <input type="text" name="input4" placeholder="adventurer" required/>
+    <button type="submit" name="button4">+</button>
+  </form>
+</div>
+<div class="col">
+  <form action="/thursday" method="post">
+    <input type="text" name="input5" placeholder="adventurer" required/>
+    <button type="submit" name="button5">+</button>
+  </form>
+</div>
+<div class="col">
+  <form action="/friday" method="post">
+    <input type="text" name="input6" placeholder="adventurer" required/>
+    <button type="submit" name="button6">+</button>
+  </form>
+</div>
+<div class="col">
+  <form action="/saturday" method="post">
+    <input type="text" name="input7" placeholder="adventurer" required/>
+    <button type="submit" name="button7">+</button>
+  </form>
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="announce">
+
+<%if (ejsAdventurers.length >=3){ %>
+  <p class="fst-italic display-4">       it's looking like Sunday          </p>
+<%} else if (ejsAdventurers2.length >=3){ %>
+  <p class="fst-italic display-4">       it's looking like Monday          </p>
+<%}else if (ejsAdventurers3.length >=3){ %>
+  <p class="fst-italic display-4">       it's looking like Tuesday         </p>
+<%}else if (ejsAdventurers4.length >=3){ %>
+  <p class="fst-italic display-4">       it's looking like Wednesday          </p>
+<%}else if (ejsAdventurers5.length >=3){ %>
+  <p class="fst-italic display-4">       it's looking like Thursday          </p>
+<%}else if (ejsAdventurers6.length >=3){ %>
+  <p class="fst-italic display-4">       it's looking like Friday          </p>
+<%}else if (ejsAdventurers7.length >=3){ %>
+  <p class="fst-italic display-4">       it's looking like Saturday          </p>
+<% } %>
+
+
+
+
+</div>
+
+
+
+<div id="resetweek">
+  <form action="/wipe" method="post" style="margin-top: 100px;">
+  
+    <button class="btn btn-danger btn-lg" type="submit">reset week?</button>
+    <input type="password" placeholder="password please" name="password" required>
+    <% if (ejsPass != '' && ejsPass != 'ilovepeach') { %>
+     <span class="text-danger-emphasis fw-bold font-monospace"><%= 'wrong password!' %></span>
+     <%= pw = '' %>
+     
+   <% } %>
+
+  </form>
+</div>
+
+<footer class="display-6">
+ with ❤️ © 2023 Dan
+</footer>
+
+
+
